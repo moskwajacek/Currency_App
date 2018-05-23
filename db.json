@@ -1,0 +1,9 @@
+{
+  "register": {
+    "first_name": "Jacek",
+    "last_name": "Moskwa",
+    "email": "moskwajacek@gmail.com",
+    "password": "Jacek1234"
+  },
+  "login": {}
+}

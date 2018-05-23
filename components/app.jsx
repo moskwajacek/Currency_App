@@ -5,6 +5,7 @@ import ChangeCurrency from './change_currency.jsx';
 import List from './list.jsx';
 import CurrencyView from './currency_view.jsx';
 
+import Loginscreen from './loginscreen.jsx'
 
 class App extends React.Component {
 
@@ -16,6 +17,8 @@ class App extends React.Component {
         amountVal: '',
         amount: '',
         list: [],
+        loginPage:[],
+        uploadScreen:[]
 
     }
 
@@ -80,8 +83,9 @@ class App extends React.Component {
         }
         
         return (
-            
-            <div>
+            <div className="App">
+                {this.state.loginPage}
+                {this.state.uploadScreen}
                 <h1>Application Currency Exchange</h1>
                 <CurrencyView currency={this.state.currency}/>
                 <ChangeCurrency currency={this.state.currency} 
@@ -101,7 +105,19 @@ class App extends React.Component {
                         deleteList={this.deleteList}
                         />
             </div>
+            
+            // <div>
+                
+            // </div>
         )
+    }
+
+    componentWillMount(){
+        let loginPage =[];
+        loginPage.push(<Loginscreen parentContext={this}/>);
+        this.setState({
+            loginPage:loginPage
+        })
     }
 
     componentDidMount() {

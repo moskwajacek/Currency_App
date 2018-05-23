@@ -8,14 +8,10 @@ import ListTfoot from './list_items_tfoot.jsx';
 class ListItems extends React.Component {
     render () {
 
-        
-        
-        
-
         return(
             <table>
                 <ListThead />
-                <ListTbody list={this.props.list} />
+                <ListTbody list={this.props.list} deleteItem={this.props.deleteItem}/>
                 <ListTfoot list={this.props.list} />  
             </table>
             
